@@ -39,9 +39,9 @@ function onOpenModal(idx) {
 }
 
 function renderModal(idx, project) {
-  const year = date.getFullYear();
   const date = new Date(project.publishedAt);
   const month = date.toLocaleString('en-us', { month: 'long' });
+  const year = date.getFullYear();
   const strHtml = `
   <div class="portfolio-modal modal fade" id="portfolioModal${idx + 1}" tabindex="-1" role="dialog" aria-hidden="true">
   <div class="modal-dialog">
@@ -65,10 +65,8 @@ function renderModal(idx, project) {
                 <li>Date: ${month + ' ' + year}</li>
               </ul>
               <button class="btn btn-info" type="button" onclick="onOpenProject('${project.url}')">
-                  <i class="fa fa-info"></i>
                   Check it out</button><br><br>
               <button class="btn btn-primary" data-dismiss="modal" type="button">
-                  <i class="fa fa-times"></i>
                   Close Project</button> 
             </div>
           </div>
